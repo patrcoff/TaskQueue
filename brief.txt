@@ -1,0 +1,15 @@
+TaskQueue module planning
+
+Inspired by the backend of the (working progress) clippy2000 tool, the intention is to create a module which further generalises the functionality of the TaskQueue which will provide the following functionality:
+
+	-Performing a sequences of 'tasks' (functions) as defined by a user in a pseduo language created by the developer.
+	-End users do not directly interact with the pseudo language however, as they will be given some sort of interface to create and save their sequences, i.e. gui drop down options
+	-Developers will interact with the module by instantiating an instance of the class, passing it the definition of the pseudo-language and available functions
+		This would be something like the below
+		
+Example usage:
+import TaskQueue as tq
+TaskQueue = tq.TQ('path_to_language_definition',object_with_available_functions_as_methods)
+
+parsed_TQ = TaskQueue.parse(user_created_taskqueue_list)
+TaskQueue.run(parsed_TQ,optional_input_var,debug=True)# I mean, maybe the parsing just happens inside the module...

@@ -1,0 +1,33 @@
+# pyproject.toml
+
+[build-system]
+requires      = ["setuptools>=61.0.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "TaskQueue"
+version = "1.0.0"
+description = "Psuedo language engine for creating user specified queues of tasks."
+readme = "README.md"
+authors = [{ name = "PatrCoff", email = "info@coffeystudio.com" }]
+license = { file = "LICENSE" }
+classifiers = [
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python",
+    "Programming Language :: Python :: 3",
+]
+keywords = ["TaskQueue"]
+dependencies = [
+    'tomli; python_version < "3.11"',
+]
+requires-python = ">=3.9"
+
+[project.optional-dependencies]
+dev = ["black", "bumpver", "isort", "pip-tools", "pytest"]
+
+[project.urls]
+Homepage = "https://github.com/patrcoff/TaskQueue"
+ref = "https://realpython.com/pypi-publish-python-package/"
+
+[project.scripts]
+test-TaskQueue = "TaskQueue.__main__:main"
