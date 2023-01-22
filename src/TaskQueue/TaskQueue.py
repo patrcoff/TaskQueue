@@ -16,7 +16,7 @@ def load_modules(module_names):
     definition = {}
 
     for name in module_names:
-        funcs = [el for el in getmembers(name) if not el[0].startswith('__')]
+        funcs = [el for el in getmembers(name) if not el[0].startswith('__') and isfunction(el[1])]
         for el in funcs:
             #definition[el[0]] = {'function':el[1],'arguments':getfullargspec(el[1])}
             definition[el[0]] = {'function':el[1],'arguments':int_or_zero(len(el[1].__annotations__)-2)}
