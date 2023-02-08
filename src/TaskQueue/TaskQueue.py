@@ -23,7 +23,7 @@ def load_modules(module_names):
             definition[el[0]] = {'function':el[1],'arguments':int_or_zero(len(el[1].__annotations__)-2)}
     return definition
     
-class TaskQueue:
+class Queue:
     """A class to define the task queue functionality and available tasks."""
 
     def __init__(self,definitions: list = []) -> None:

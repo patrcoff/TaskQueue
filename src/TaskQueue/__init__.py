@@ -1,3 +1,3 @@
-from TaskQueue import TaskQueue
+from .TaskQueue import Queue
 
-print(type(TaskQueue))
+#print(type(Queue))

@@ -1,4 +1,4 @@
-from TaskQueue import TaskQueue
+from TaskQueue import Queue
 #from TaskQueue import builtin_functions as bf
 #from inspect import getmembers, isfunction   
 
@@ -17,7 +17,7 @@ def main():
 
     #print(definition)
 
-    tq = TaskQueue.TaskQueue()
+    tq = Queue.TaskQueue()
     print('AVAILABLE TASKS:',tq.available_tasks)
     tq.run_queue(tq.parser(['test_func','test_func']))
 
