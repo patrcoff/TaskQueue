@@ -8,8 +8,16 @@ Inspired by the backend of the (working progress) clippy2000 tool, the intention
 		This would be something like the below
 		
 Example usage:
-import TaskQueue as tq
-TaskQueue = tq.TQ('path_to_language_definition',object_with_available_functions_as_methods)
+#--------------------------------
+from TaskQueue import Queue
+import your_custom_module as m
+
+tq = Queue([f])
+available_tasks = tq.available_tasks #used for referencing task function keys 
+q = tq.parser(['VALID_TASK_KEY1','VALID_TASK_KEY2:var1:var2', 'FOREACH', 'VALID_TASK_KEY3', 'ENDFOR'])  #handles for loops etc
+tq.run_queue(q)  #runs the queue of tasks
+#--------------------------------
+
 
 parsed_TQ = TaskQueue.parse(user_created_taskqueue_list)
 TaskQueue.run(parsed_TQ,optional_input_var,debug=True)# I mean, maybe the parsing just happens inside the module...
